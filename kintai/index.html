@@ -14,7 +14,17 @@
   </div>
   <script>
 　var dToday = new Date();
-  document.write(dToday.getHours()+:+dToday.getMinutes());
+  var year = dToday.getFullYear();
+  var month = dToday.getMonth()+1;
+  var day = dToday.getDate();
+  var week = dToday.getDay();
+  var hour = dToday.getHours();
+  var minute = dToday.getMinutes();
+  var second = dToday.getSeconds();
+  var yobi= new Array("日","月","火","水","木","金","土");
+ // 取得した日付情報を表示する
+  document.write(year + "年" + month + "月" + day + "日 ("+ yobi[week] + ")<br>\n");
+  document.write(hour + ":" + minute + "<br>\n");
   </script>
 </body>
 </html>
