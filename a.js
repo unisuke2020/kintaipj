@@ -15,7 +15,8 @@ $(function(){
 		var mmi = ('0' + mi).slice(-2);
 		var ss = ('0' + s).slice(-2);
 	$('#hizuke').text(y + '年' + mm + '月' + dd + '日' + '(' + wd[w] + ')');
-	$('#tbfs').css("font-size","200%");
+	$('#hi_fs').css("font-size","200%");
+	$('#ji_fs').css("font-size","600%");
 	$('#hours').text(hh);
 	$('#minutes').text(mmi);
 	$('#flash').fadeOut(1000).fadeIn(1000);
