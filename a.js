@@ -24,6 +24,6 @@ $(function(){
 });
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-   	 $('#coment1').text(hh+':'+mmi);
+   	 $('#coment').text(hh+':'+mmi);
 	});
 });
