@@ -24,6 +24,6 @@ $(function(){
 });
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-   	 console.log("TEST");
+   	 $('#coment1').text(hh+':'+mmi);
 	});
 });
