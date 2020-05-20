@@ -24,6 +24,9 @@ $(function(){
 });
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-   	 $('#coment').text(new Date());
+   	    navigator.geolocation.watchPosition(
+            function(position){
+            $('#coment').text(position.coords.latitude + "," +position.coords.longitude);
+	    });
 	});
 });
