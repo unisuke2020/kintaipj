@@ -22,3 +22,8 @@ $(function(){
 	$('#flash').fadeOut(1000).fadeIn(1000);
 	}, 1000);
 });
+$(function(){
+	$('.btn-circle-border-simple').on('click mouseenter', function() {
+   	 console.log("TEST");
+	});
+});
