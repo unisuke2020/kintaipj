@@ -23,7 +23,7 @@ $(function(){
 	}, 1000);
 });
 $(function(){
-	$('.btn-circle-border-simple').on('click mouseenter', function() {
+	$('.btn-circle-border-simple').on('click', function() {
    	 console.log("TEST");
 	});
 });
