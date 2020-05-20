@@ -24,6 +24,6 @@ $(function(){
 });
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-   	 $('#coment').text("test");
+   	 $('#coment').text(new Date());
 	});
 });
