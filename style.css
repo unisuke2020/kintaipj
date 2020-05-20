@@ -11,6 +11,7 @@
   overflow: hidden;
   font-weight: bold;
   transition: .4s;
+  font-size: 200%
 }
 
 .btn-circle-border-simple:hover {
