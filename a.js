@@ -49,7 +49,7 @@ $(function(){
 });
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-   	    navigator.geolocation.watchPosition(
+   	    navigator.geolocation.getCurrentPosition(
             function(position){
             $('#coment').text(position.coords.latitude + "," +position.coords.longitude);
 	    });
