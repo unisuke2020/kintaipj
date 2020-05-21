@@ -47,11 +47,42 @@ $(function(){
 	$('#flash').fadeOut(1000).fadeIn(1000);
 	}, 1000);
 });
+
+function getLocationName(latitude, longitude, callback) {
+    if (isNaN(parseFloat(latitude)) || isNaN(parseFloat(longitude))) {
+        return false;
+    }
+
+    var locationName;
+    var geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(latitude, longitude)
+
+   //Reverse Geocoding using Google maps api.
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+                locationName = results[1].formatted_address;
+                alert(locationName);
+            }
+            else {
+                locationName = "Unknown";
+            }
+        }
+        else {
+            locationName = "Couldn't find location. Error code: " + status;
+        }
+        alert(locationName);
+        callback(locationName);
+    });
+}
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
    	    navigator.geolocation.getCurrentPosition(
             function(position){
-            $('#coment').text(position.coords.latitude + "," +position.coords.longitude);
+            //$('#coment').text(position.coords.latitude + "," +position.coords.longitude);
+	    	getLocationName(position.coords.latitude, position.coords.longitude, function(result){
+            	$("#coment").text(result);    
+		});
 	    });
 	});
 });
