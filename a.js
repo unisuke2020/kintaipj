@@ -51,6 +51,25 @@ $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
    	    navigator.geolocation.getCurrentPosition(
             function(position){
+		var geocoder = new google.maps.Geocoder(); 
+		var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
+		   //Reverse Geocoding using Google maps api.
+    			geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        		if (status == google.maps.GeocoderStatus.OK) {
+            		if (results[1]) {
+                		locationName = results[1].formatted_address;
+                		console.log(locationName);
+            		}
+            		else {
+                		locationName = "Unknown";
+            		}
+        		}
+        		else {
+            		locationName = "Couldn't find location. Error code: " + status;
+        		}
+        		console.log(locationName);
+        		callback(locationName);
+    		});
             $('#coment').text(position.coords.latitude + "," +position.coords.longitude);
 	    });
 	});
