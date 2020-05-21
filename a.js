@@ -62,7 +62,7 @@ function getLocationName(latitude, longitude, callback) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[1]) {
                 locationName = results[1].formatted_address;
-                alert(locationName);
+                console.log(locationName);
             }
             else {
                 locationName = "Unknown";
@@ -71,7 +71,7 @@ function getLocationName(latitude, longitude, callback) {
         else {
             locationName = "Couldn't find location. Error code: " + status;
         }
-        alert(locationName);
+        console.log(locationName);
         callback(locationName);
     });
 }
