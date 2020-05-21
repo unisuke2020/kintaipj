@@ -53,6 +53,7 @@ $(function(){
             function(position){
 		var geocoder = new google.maps.Geocoder(); 
 		var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude)
+		console.log(latlng);
 		   //Reverse Geocoding using Google maps api.
     			geocoder.geocode({ 'latLng': latlng }, function (results, status) {
         		if (status == google.maps.GeocoderStatus.OK) {
