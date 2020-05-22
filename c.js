@@ -33,6 +33,7 @@ $("#button1").on("click", function () {
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
         console.log(latitude,longitude);
+	  $("#userLocation").text(latitude,longitude);
 	    });
     getLocationName(latitude, longitude, function(result){
         $("#userLocation").text(result);
