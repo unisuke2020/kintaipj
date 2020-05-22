@@ -77,12 +77,12 @@ function getLocationName(latitude, longitude, callback) {
 }
 $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
-	//   if (navigator.geolocation) {
+	   if (navigator.geolocation) {
       	//	navigator.geolocation.getCurrentPosition(
 	//	function(position){
         //        $('#coment').text(position.coords);
 	//      });
-        //   } else { // 現在位置を取得できない場合の処理
+           } else { // 現在位置を取得できない場合の処理
             $('#coment').text("ご使用中のブラウザは現在地検索に対応されておりません。");
     	//   }
 	});
