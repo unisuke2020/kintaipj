@@ -34,8 +34,8 @@ $("#button1").on("click", function () {
       var longitude = position.coords.longitude;
         console.log(latitude,longitude);
 	    });
-//    getLocationName(latitude, longitude, function(result){
-//        $("#userLocation").text(result);
-//	});
+    getLocationName(latitude, longitude, function(result){
+        $("#userLocation").text(result);
+	});
 });
 });
