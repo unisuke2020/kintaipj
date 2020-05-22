@@ -79,10 +79,7 @@ $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
    	    navigator.geolocation.getCurrentPosition(
             function(position){
-            $('#coment').text(position.coords.latitude + "," +position.coords.longitude);
-	    	getLocationName(position.coords.latitude, position.coords.longitude, function(result){
-           // 	$("#coment").text(result);    
-		});
+            $('#coment').text(position.coords);
 	    });
 	});
 });
