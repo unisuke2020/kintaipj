@@ -79,7 +79,7 @@ $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
 	   if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition(function(position){
-			 $('#coment').text(position.coords.latitude, position.coords.longitude);
+			 $('#coment').text(position.coords.latitude,position.coords.longitude);
 	      });
 		//$('#coment').text("test");
            } else { // 現在位置を取得できない場合の処理
