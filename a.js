@@ -79,8 +79,8 @@ $(function(){
 	$('.btn-circle-border-simple').on('click', function() {
 	   if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition(function(position){
-			 $('#coment').text(position.coords.latitude);
-			 $('#coment1').text(position.coords.longitude);
+		$('#coment').text(position.coords.latitude);
+		alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
 	      });
            } else { // 現在位置を取得できない場合の処理
             $('#coment').text("ご使用中のブラウザは現在地検索に対応されておりません。");
