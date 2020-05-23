@@ -1,42 +1,49 @@
-﻿function getLocationName(latitude, longitude, callback) {
-    if (isNaN(parseFloat(latitude)) || isNaN(parseFloat(longitude))) {
-        return false;
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>位置情報取得サンプル</title>
+
+  <script>
+    // Geolocation APIに対応している
+    if (navigator.geolocation) {
+      alert("この端末では位置情報が取得できます");
+    // Geolocation APIに対応していない
+    } else {
+      alert("この端末では位置情報が取得できません");
     }
 
-    var locationName;
-    var geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(latitude, longitude)
-
-   //Reverse Geocoding using Google maps api.
-    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                locationName = results[1].formatted_address;
-                console.log(locationName);
-            }
-            else {
-                locationName = "Unknown";
-            }
+    // 現在地取得処理
+    function getPosition() {
+      // 現在地を取得
+      navigator.geolocation.getCurrentPosition(
+        // 取得成功した場合
+        function(position) {
+            alert("緯度:"+position.coords.latitude+",経度"+position.coords.longitude);
+        },
+        // 取得失敗した場合
+        function(error) {
+          switch(error.code) {
+            case 1: //PERMISSION_DENIED
+              alert("位置情報の利用が許可されていません");
+              break;
+            case 2: //POSITION_UNAVAILABLE
+              alert("現在位置が取得できませんでした");
+              break;
+            case 3: //TIMEOUT
+              alert("タイムアウトになりました");
+              break;
+            default:
+              alert("その他のエラー(エラーコード:"+error.code+")");
+              break;
+          }
         }
-        else {
-            locationName = "Couldn't find location. Error code: " + status;
-        }
-        console.log(locationName);
-        callback(locationName);
-    });
-}
-
-$(function(){
-$("#button1").on("click", function () {
-  navigator.geolocation.getCurrentPosition(
-  function(position){
-      var latitude = position.coords.latitude;
-      var longitude = position.coords.longitude;
-        console.log(latitude,longitude);
-	  $("#userLocation").text(latitude,longitude);
-	    });
-    getLocationName(latitude, longitude, function(result){
-        $("#userLocation").text(result);
-	});
-});
-});
+      );
+    }
+  </script>
+</head>
+<body>
+  <h1>位置情報取得サンプル</h1>
+  <button onclick="getPosition();">位置情報を取得する</button>
+</body>
+</html>
