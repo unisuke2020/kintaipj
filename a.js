@@ -81,7 +81,8 @@ $(function(){
 	   if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition(function(position){
 		$('#coment').text(position.coords.latitude+","+position.coords.longitude);
-		getLocationName(position.coords.latitude,position.coords.longitude);
+		getLocationName(position.coords.latitude,position.coords.longitude,callback);
+                $('#coment2').text(callback);
 	      });
            } else { // 現在位置を取得できない場合の処理
             $('#coment').text("ご使用中のブラウザは現在地検索に対応されておりません。");
