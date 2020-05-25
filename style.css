@@ -13,9 +13,6 @@
   transition: .4s;
   font-size: 200%
 }
-.hover {
-  background: #fff;
-}
 
 .btn-circle-border-simple:hover {
   background: #b3e1ff;
