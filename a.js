@@ -48,44 +48,36 @@ $(function(){
 	}, 1000);
 });
 
-function getLocationName(latitude, longitude, callback) {
-	alert(latitude+","+longitude);
-    if (isNaN(parseFloat(latitude)) || isNaN(parseFloat(longitude))) {
-        return false;
-    }
-
-    var locationName;
-    var geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(latitude, longitude)
-
-   //Reverse Geocoding using Google maps api.
-    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-                locationName = results[1].formatted_address;
-                console.log(locationName);
-            }
-            else {
-                locationName = "Unknown";
-            }
-        }
-        else {
-            locationName = "Couldn't find location. Error code: " + status;
-        }
-        console.log(locationName);
-        callback(locationName);
-    });
-}
 $(function(){
+  function successFunc(position) {
+    // 現在位置取得 成功時の処理
+    $('#coment').text("緯度:"+position.coords.latitude+" , 経度:"+position.coords.longitude);
+    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+    $.getJSON(url, function(data) {
+    $('#coment2').text(data.results.lv01Nm);
+    });
+  }
+
+  function errorFunc(error) {
+    // 現在位置取得 失敗時の処理
+    var errorMessage = {
+      0: "現在位置を取得できませんでした。" ,
+      1: "位置情報の使用が許可されていないので、現在位置を取得できませんでした。" ,
+      2: "現在位置の取得に失敗しました。" ,
+      3: "位置情報の取得に時間がかかったため、タイムアウトされました。" ,
+    };
+    $('#text1').text(errorMessage[error.code]);
+  }
+
+  // 現在位置取得 オプション
+  let options = {
+    enableHighAccuracy: true
+  }
 	$('.btn-circle-border-simple').on('click', function() {
-	   if (navigator.geolocation) {
-      		navigator.geolocation.getCurrentPosition(function(position){
-		$('#coment').text(position.coords.latitude+","+position.coords.longitude);
-		getLocationName(position.coords.latitude,position.coords.longitude,callback);
-                $('#coment2').text(callback);
-	      });
-           } else { // 現在位置を取得できない場合の処理
-            $('#coment').text("ご使用中のブラウザは現在地検索に対応されておりません。");
-    	   }
-	});
+    	if (navigator.geolocation) {
+      		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
+    	} else { // 現在位置を取得できない場合の処理
+      		$('#text1').text("ご使用中のブラウザは現在地検索に対応されておりません。");
+    	}
+  });
 });
