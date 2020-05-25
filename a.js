@@ -51,10 +51,12 @@ $(function(){
 $(function(){
   function successFunc(position) {
     // 現在位置取得 成功時の処理
-    $('#coment').text("緯度:"+position.coords.latitude+" , 経度:"+position.coords.longitude);
-    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+    $('#text1').text("緯度:"+position.coords.latitude+" , 経度:"+position.coords.longitude);
+	    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+    
     $.getJSON(url, function(data) {
-    $('#coment2').text(data.results.lv01Nm);
+	    var addressData = GSI.MUNI_ARRAY[data.results.muniCd];
+	    $('#text2').text(addressData + " " +data.results.lv01Nm);
     });
   }
 
