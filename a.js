@@ -48,17 +48,17 @@ $(function(){
 	}, 1000);
 });
 
-$(function() {
-        /* buttonタグを変化させる */
-        $('.btn-circle-border-simple')
-            /* 触ったらhoverクラスを適用 */
-            .bind('touchstart', function() {
-                $(this).addClass('hover');
-            /* 離したらhoverクラスを外す */
-            }).bind('touchend', function() {
-                $(this).removeClass('hover');
-            });
-});
+$("body").on({
+  "touchstart": function() {
+    return $(this).off("mouseover mouseout");
+  },
+  "touchstart mouseover": function() {
+    return $(this).addClass("hover");
+  },
+  "touchend touchmove mouseout click": function() {
+    return $(this).removeClass("hover");
+  }
+}, ".touch-hover");
 
 $(function(){
   function successFunc(position) {
