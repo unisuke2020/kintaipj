@@ -65,9 +65,9 @@ $(function(){
     // 現在位置取得 失敗時の処理
     var errorMessage = {
       0: "現在位置を取得できませんでした。" ,
-      1: "位置情報の使用が許可されていないので、現在位置を取得できませんでした。" ,
+      1: "位置情報の使用が許可されていません。" ,
       2: "現在位置の取得に失敗しました。" ,
-      3: "位置情報の取得に時間がかかったため、タイムアウトされました。" ,
+      3: "位置情報の取得がタイムアウトしました。" ,
     };
     $('#coment').text(errorMessage[error.code]);
   }
@@ -81,7 +81,7 @@ $(function(){
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
     	} else { // 現在位置を取得できない場合の処理
-      		$('#text1').text("ご使用中のブラウザは現在地検索に対応されておりません。");
+      		$('#text1').text("ブラウザは位置検索に対応していません。");
     	}
   });
 });
