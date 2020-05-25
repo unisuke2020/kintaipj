@@ -14,11 +14,11 @@
   font-size: 200%
 }
 .hover {
-  background: #b3e1ff;
+  background: #fff;
 }
 
 .btn-circle-border-simple:hover {
-  background: #fff;
+  background: #b3e1ff;
 }
 
 #loader-bg {
