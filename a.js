@@ -48,7 +48,7 @@ $(function(){
 	}, 1000);
 });
 
-$("body").on({
+$('.btn-circle-border-simple').on({
   "touchstart": function() {
     return $(this).off("mouseover mouseout");
   },
