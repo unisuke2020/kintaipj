@@ -12,8 +12,19 @@
   font-weight: bold;
   transition: .4s;
   font-size: 200%
+  /* iPhone長押し時のポップアップ防止 */
+  -webkit-touch-callout: none;
+  cursor: pointer;
 }
 
+/* スマホ用のhoverクラス */
+.hover {
+    border: 2px solid #E49197;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #E49197;
+}
+/* PC用のhover要素 */
 .btn-circle-border-simple:hover {
   background: #b3e1ff;
 }
