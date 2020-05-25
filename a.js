@@ -57,7 +57,7 @@ $(function(){
     $.getJSON(url, function(data) {
 	    var addressData = GSI.MUNI_ARRAY[data.results.muniCd];
 	    var addressData = addressData.split(',');
-	    $('#coment2').text(addressData[1]+ " " + addressData[3] + " " +data.results.lv01Nm);
+	    $('#coment2').text(addressData[1]+ " " + addressData[3] + data.results.lv01Nm);
     });
   }
 
