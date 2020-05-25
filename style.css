@@ -17,14 +17,6 @@
   cursor: pointer;
 }
 
-/* スマホ用のhoverクラス */
-.hover {
-    border: 2px solid #E49197;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #E49197;
-}
-/* PC用のhover要素 */
 .btn-circle-border-simple:hover {
   background: #b3e1ff;
 }
