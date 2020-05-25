@@ -48,6 +48,18 @@ $(function(){
 	}, 1000);
 });
 
+$(function() {
+        /* buttonタグを変化させる */
+        $('.btn-circle-border-simple')
+            /* 触ったらhoverクラスを適用 */
+            .bind('touchstart', function() {
+                $(this).addClass('hover');
+            /* 離したらhoverクラスを外す */
+            }).bind('touchend', function() {
+                $(this).removeClass('hover');
+            });
+});
+
 $(function(){
   function successFunc(position) {
     // 現在位置取得 成功時の処理
