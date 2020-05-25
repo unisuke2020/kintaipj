@@ -12,9 +12,6 @@
   font-weight: bold;
   transition: .4s;
   font-size: 200%
-  /* iPhone長押し時のポップアップ防止 */
-  -webkit-touch-callout: none;
-  cursor: pointer;
 }
 
 .btn-circle-border-simple:hover {
