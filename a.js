@@ -52,7 +52,11 @@ $(function(){
   function successFunc(position) {
     // 現在位置取得 成功時の処理
     var t = new Date(position.timestamp);
-    $('#coment').text("出勤時刻:"+ t.toLocaleTimeString());
+    var _h = t.getHours();
+    var _mi = t.getMinutes();
+    var _hh = ('0' + _h).slice(-2);
+    var _mmi = ('0' + _mi).slice(-2);	  
+    $('#coment').text("出勤時刻:"+ _hh + ":" + _mmi);
 	    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
     $.getJSON(url, function(data) {
