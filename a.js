@@ -66,14 +66,15 @@ $(function(){
       2: "現在位置の取得に失敗しました。" ,
       3: "位置情報の取得に時間がかかったため、タイムアウトされました。" ,
     };
-    $('#text1').text(errorMessage[error.code]);
+    $('#coment').text(errorMessage[error.code]);
   }
 
   // 現在位置取得 オプション
   let options = {
     enableHighAccuracy: true
   }
-	$('.btn-circle-border-simple').on('click', function() {
+
+  $('.btn-circle-border-simple').on('click', function() {
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
     	} else { // 現在位置を取得できない場合の処理
