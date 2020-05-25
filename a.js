@@ -51,7 +51,8 @@ $(function(){
 $(function(){
   function successFunc(position) {
     // 現在位置取得 成功時の処理
-    $('#coment').text("出勤時刻:"+(position.timestamp).toLocaleTimeString());
+    var t = new Date(position.timestamp);
+    $('#coment').text("出勤時刻:"+ t.toLocaleTimeString());
 	    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
     $.getJSON(url, function(data) {
