@@ -59,7 +59,7 @@ $(function(){
     var _mi = t.getMinutes();
     var _hh = ('0' + _h).slice(-2);
     var _mmi = ('0' + _mi).slice(-2);	  
-    $('#coment').text(_hh + ":" + _mmi);
+    $('#coment').text($('#coment').text() + _hh + ":" + _mmi);
 	  
 　　const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
