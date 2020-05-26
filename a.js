@@ -1,3 +1,4 @@
+//ロード画面
 $(function() {
   var h = $(window).height();
   
@@ -23,6 +24,7 @@ function stopload(){
   $('#loader').delay(600).fadeOut(300);
 }
 
+//時刻表示
 $(function(){
 	setInterval(function(){
 		var now = new Date();
@@ -48,6 +50,7 @@ $(function(){
 	}, 1000);
 });
 
+//位置表示
 $(function(){
   function successFunc(position) {
     // 現在位置取得 成功時の処理
