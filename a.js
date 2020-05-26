@@ -59,7 +59,7 @@ $(function(){
     var _mi = t.getMinutes();
     var _hh = ('0' + _h).slice(-2);
     var _mmi = ('0' + _mi).slice(-2);	  
-    $('#coment').text("出勤時刻:"+ _hh + ":" + _mmi);
+    $('#coment').text(_hh + ":" + _mmi);
 	  
 　　const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
@@ -89,9 +89,9 @@ $(function(){
   $('.btn-circle-border-simple').on('click', function() {
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
-		console.log($(this).attr('id'));
+		$('coment').text($(this).attr('id') + $('coment').text());
     	} else { // 現在位置を取得できない場合の処理
-      		$('#text1').text("ブラウザは位置検索に対応していません。");
+      		$('#coment').text("ブラウザは位置検索に対応していません。");
     	}
   });
 });
