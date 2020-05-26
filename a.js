@@ -87,7 +87,7 @@ $(function(){
   }
 
   $('.btn-circle-border-simple').on('click', function() {
-	  console.log($('.btn-circle-border-simple').attr('id').text());
+	  console.log($('.btn-circle-border-simple').attr('id'));
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
     	} else { // 現在位置を取得できない場合の処理
