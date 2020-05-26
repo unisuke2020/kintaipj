@@ -90,6 +90,7 @@ $(function(){
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
 		//$('coment').text($(this).attr('id') + $('coment').text());
+		console.log($(this).attr('id'));
 		$('coment').text($(this).attr('id'));
     	} else { // 現在位置を取得できない場合の処理
       		$('#coment').text("ブラウザは位置検索に対応していません。");
