@@ -44,7 +44,7 @@ $(function(){
 	$('#ji_fs').css("font-size","600%");
 	$('#hours').text(hh);
 	$('#minutes').text(mmi);
-	$('#flash').fadeOut(1000).fadeIn(1000);
+	$('#flash').text(":").fadeOut(1000).fadeIn(1000);
 	}, 1000);
 });
 
