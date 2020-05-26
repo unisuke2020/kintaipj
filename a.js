@@ -87,12 +87,13 @@ $(function(){
   }
 
   $('.btn-circle-border-simple').on('click', function() {
-    	if (navigator.geolocation) {
-		if($(this).attr('id')=="skin"){
-			$('#coment').text("出勤 ");
-		}else{
-			$('#coment').text("退勤 ");
-		}
+	if($(this).attr('id')=="skin"){
+		$('#coment').text("出勤 ");
+	}else{
+		$('#coment').text("退勤 ");
+	}
+	  
+	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
 		//$('coment').text($(this).attr('id') + $('coment').text());
     	} else { // 現在位置を取得できない場合の処理
