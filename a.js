@@ -88,7 +88,7 @@ $(function(){
 
   $('.btn-circle-border-simple').on('click', function() {
     	if (navigator.geolocation) {
-		if($(this).attr('id')="skin"){
+		if($(this).attr('id')=="skin"){
 			$('#coment').text("出勤 ");
 		}else{
 			$('#coment').text("退勤 ");
