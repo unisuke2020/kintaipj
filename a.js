@@ -60,7 +60,8 @@ $(function(){
     var _hh = ('0' + _h).slice(-2);
     var _mmi = ('0' + _mi).slice(-2);	  
     $('#coment').text("出勤時刻:"+ _hh + ":" + _mmi);
-	    const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
+
+　　const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
     $.getJSON(url, function(data) {
 	    var addressData = GSI.MUNI_ARRAY[data.results.muniCd];
