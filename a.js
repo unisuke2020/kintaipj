@@ -84,7 +84,7 @@ $(function(){
     var _hh = ('0' + _h).slice(-2);
     var _mmi = ('0' + _mi).slice(-2);	  
     $('#coment').text($('#coment').text() + _hh + ":" + _mmi);
-    $('#coment1').text(errorMessage[error.code]);
+    $('#coment2').text(errorMessage[error.code]);
   }
 
   // 現在位置取得 オプション
