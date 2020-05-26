@@ -60,7 +60,7 @@ $(function(){
     var _hh = ('0' + _h).slice(-2);
     var _mmi = ('0' + _mi).slice(-2);	  
     $('#coment').text("出勤時刻:"+ _hh + ":" + _mmi);
-
+    console.log($(this).attr('id'));
 　　const url = "https://mreversegeocoder.gsi.go.jp/reverse-geocoder/LonLatToAddress?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude;
     
     $.getJSON(url, function(data) {
@@ -87,7 +87,6 @@ $(function(){
   }
 
   $('.btn-circle-border-simple').on('click', function() {
-	  console.log($(this).attr('id'));
     	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
     	} else { // 現在位置を取得できない場合の処理
