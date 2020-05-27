@@ -1,6 +1,4 @@
 ﻿//Firebase初期設定
-<script>
-  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyA8zeue6O4l9SlXr_LM43Qa73szgsHV44Q",
     authDomain: "model-palace-277910.firebaseapp.com",
@@ -12,7 +10,6 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-</script>
 
 //DOM取得
 var inputarea = document.getElementById('input-area');
