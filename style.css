@@ -1,12 +1,3 @@
-//中央表示
-body {
-  position:relative;
-}
-#wrap {
-  position:absolute;
-  top:50%;
-}
-
 //ボタン
 .btn-circle-border-simple {
   display: inline-block;
