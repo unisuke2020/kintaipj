@@ -1,4 +1,4 @@
-﻿﻿//Firebase初期設定
+//Firebase初期設定
   var firebaseConfig = {
     apiKey: "AIzaSyA8zeue6O4l9SlXr_LM43Qa73szgsHV44Q",
     authDomain: "model-palace-277910.firebaseapp.com",
@@ -20,7 +20,7 @@ var logout = document.getElementById('logout');
 
 
 //新規登録処理
-newuser.addEventListener('click', function(e) {
+newuser.addEventListener('click', function() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   
@@ -33,7 +33,7 @@ newuser.addEventListener('click', function(e) {
 
 
 //ログイン処理
-login.addEventListener('click', function(e) {
+login.addEventListener('click', function() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   
@@ -55,6 +55,8 @@ logout.addEventListener('click', function() {
 //認証状態の確認
 firebase.auth().onAuthStateChanged(function(user) {
   if(user) {
+    var userID = (user.email).split('@')
+    $('#coment3').text(userID[0]);
     loginDisplay();
   }
   else {
@@ -67,6 +69,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 function loginDisplay() {
   inputarea.classList.add('hide');
   tcardarea.classList.remove('hide');
+  $('#email').text("");
+  $('#password').text("");
 }
 
 
@@ -75,8 +79,6 @@ function logoutDisplay() {
   tcardarea.classList.add('hide');
   $('#coment').text("");
   $('#coment2').text("");
-  $('#email').text("");
-  $('#password').text("");
 }
 
 //ロード画面
@@ -182,7 +184,6 @@ $(function(){
 	  
 	if (navigator.geolocation) {
       		navigator.geolocation.getCurrentPosition( successFunc , errorFunc , options ) ;
-		//$('coment').text($(this).attr('id') + $('coment').text());
     	} else { // 現在位置を取得できない場合の処理
       		$('#coment').text("ブラウザは位置検索に対応していません。");
     	}
