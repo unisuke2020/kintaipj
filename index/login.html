@@ -1,0 +1,48 @@
+﻿﻿<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+    <title>勤怠システム</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1 class="header-title">勤怠システム</h1>
+    
+    <div class="container">
+      <div id="input-area">
+        <input id="email" type="text" placeholder="ユーザー名を入力" required/>
+        <input id="password" type="password" placeholder="パスワードを入力" required/>
+        <button id="login">ログイン</button>
+      </div>
+<div id="tcard-area" class="hide">
+      <button id="logout">ログアウト</button>
+      <button id="newuser">新規登録</button> 
+<center>
+	<table align="center" border="0">
+	<tr align="center">
+		<td id="hi_fs" colspan="2">
+		<span id="hizuke"></span>
+                </td>
+        </tr>
+	<tr align="center">
+		<td id="ji_fs" colspan="2">
+		<span id="hours"></span>
+		<span id="flash">:</span>
+		<span id="minutes"></span>
+		</td>
+	</tr>
+	<tr align="center">
+		<td><a href="#" class="btn-gradient-radius">出勤</a>
+		<td><a href="#" class="btn-gradient-radius">退勤</a></td>
+		</tr>
+	</tr>
+	</table>
+</center>
+    </div>    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script> 
+    <script type="text/javascript" src="./app.js"></script>
+  </body>
+</html>
