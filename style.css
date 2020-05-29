@@ -1,11 +1,3 @@
-body {
-  position:relative;
-}
-#wrap {
-  position:absolute;
-  top:50%;
-}
-
 .btn-circle-border-simple {
   display: inline-block;
   text-decoration: none;
