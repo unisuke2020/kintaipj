@@ -67,14 +67,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 function loginDisplay() {
   inputarea.classList.add('hide');
   tcardarea.classList.remove('hide');
-  $('#coment').text("");
-  $('#coment2').text("");
 }
 
 
 function logoutDisplay() {
   inputarea.classList.remove('hide');
-  tcardarea.classList.add('hide'); 
+  tcardarea.classList.add('hide');
+  $('#coment').text("");
+  $('#coment2').text("");
 }
 
 //ロード画面
