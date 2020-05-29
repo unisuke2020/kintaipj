@@ -75,6 +75,8 @@ function logoutDisplay() {
   tcardarea.classList.add('hide');
   $('#coment').text("");
   $('#coment2').text("");
+  $('#email').text("");
+  $('#password').text("");
 }
 
 //ロード画面
