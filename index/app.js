@@ -67,6 +67,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 function loginDisplay() {
   inputarea.classList.add('hide');
   tcardarea.classList.remove('hide');
+  $('#coment').text("");
+  $('#coment2').text("");
 }
 
 
