@@ -11,22 +11,32 @@
   </head>
   <body>
 <div id="wrap"> 
-    <h1 class="header-title">勤怠システム</h1>
   <div id="loader-bg">
     <div id="loader">
       <!--<img src="img-loading.gif" width="80" height="80" alt="Now Loading..." />-->
       <p>Now Loading...</p>
     </div>
    </div>
-    <div class="container">
-      <div id="input-area">
-        <input id="email" type="text" placeholder="ユーザー名を入力" required/>
-        <input id="password" type="password" placeholder="パスワードを入力" required/>
-        <button id="login">ログイン</button>
-      </div>
-      <div id="tcard-area" class="hide">
-      <button id="logout">ログアウト</button>
-      <button id="newuser">新規登録</button> 
+<div id="input-area" class="form-wrapper">
+  <h1>勤怠システム</h1>
+  <form>
+    <div class="form-item">
+      <label for="email"></label>
+      <input type="email" id="email" name="email" required="required" placeholder="Email Address"></input>
+    </div>
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="password" id="password" name="password" required="required" placeholder="Password"></input>
+    </div>
+    <div class="button-panel">
+      <input type="submit" id="login" class="button" title="Sign In" value="Sign In"></input>
+    </div>
+  </form>
+  <div class="form-footer">
+  <br><br>
+  </div>
+</div>
+<div id="tcard-area" class="hide">
 <center>
 	<table align="center" border="0">
     <tr align="right">
