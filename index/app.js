@@ -36,7 +36,6 @@ newuser.addEventListener('click', function() {
 login.addEventListener('click', function() {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  console.log(email);
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch(function(error) {
     alert('ログインできません（' + error.message + '）');
@@ -75,7 +74,6 @@ function loginDisplay() {
 
 
 function logoutDisplay() {
-    console.log("test");
   inputarea.classList.remove('hide');
   tcardarea.classList.add('hide');
   $('#coment').text("");
