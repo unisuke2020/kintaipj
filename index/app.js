@@ -66,6 +66,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 function loginDisplay() {
+	console.log("aaa")
   inputarea.classList.add('hide');
   tcardarea.classList.remove('hide');
   $('#email').text("");
