@@ -12,11 +12,11 @@
   firebase.initializeApp(firebaseConfig);
 
 //DOM取得
-var inputarea = document.getElementById('input-area');
-var tcardarea = document.getElementById('tcard-area');
-var newuser = document.getElementById('newuser');
-var login = document.getElementById('login');
-var logout = document.getElementById('logout');
+var inputarea = $('input-area').get(0);
+var tcardarea = $('tcard-area').get(0);
+var newuser = $('newuser').get(0);
+var login = $('login').get(0);
+var logout = $('logout').get(0);
 
 
 //新規登録処理
@@ -33,9 +33,9 @@ newuser.addEventListener('click', function() {
 
 
 //ログイン処理
-login.addEventListener('click', function() {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+login.on('click', function() {
+  var email = $('email').value;
+  var password = $('password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch(function(error) {
     alert('ログインできません（' + error.message + '）');
