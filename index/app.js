@@ -33,9 +33,9 @@ var logout = $('logout').get(0);
 
 
 //ログイン処理
-login.on('click', function() {
-  var email = $('email').value;
-  var password = $('password').value;
+$('#login').('click', function() {
+  var email = $('#email').value;
+  var password = $('#password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch(function(error) {
     alert('ログインできません（' + error.message + '）');
