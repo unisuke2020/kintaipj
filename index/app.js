@@ -25,8 +25,8 @@ $('#newuser').on('click', function() {
 
 //ログイン処理
 $('#login').on('click', function() {
-  var email = $('#email').value;
-  var password = $('#password').value;
+  var email = $('#email').text();
+  var password = $('#password').text();
   firebase.auth().signInWithEmailAndPassword(email, password)
   .catch(function(error) {
     alert('ログインできません（' + error.message + '）');
