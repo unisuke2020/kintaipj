@@ -77,7 +77,7 @@ body {
 }
 
 /* Form Layout */
-.form-wrapper {
+#input-area {
   background: #fafafa;
   margin: 3em auto;
   padding: 0 1em;
