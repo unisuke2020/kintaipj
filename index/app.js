@@ -11,19 +11,10 @@
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-//DOM取得
-var inputarea = $('input-area').get(0);
-var tcardarea = $('tcard-area').get(0);
-var newuser = $('newuser').get(0);
-var login = $('login').get(0);
-var logout = $('logout').get(0);
-
-
 //新規登録処理
 $('#newuser').on('click', function() {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
-  
+  var email = $('#email').value;
+  var password = $('#password').value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .catch(function(error) {
     alert('登録できません（' + error.message + '）');
@@ -66,17 +57,16 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 
 function loginDisplay() {
-	console.log("aaa")
-  inputarea.classList.add('hide');
-  tcardarea.classList.remove('hide');
+  $('#input-area').classList.add('hide');
+  $('#tcard-area').classList.remove('hide');
   $('#email').text("");
   $('#password').text("");
 }
 
 
 function logoutDisplay() {
-  inputarea.classList.remove('hide');
-  tcardarea.classList.add('hide');
+  $('#input-area').classList.remove('hide');
+  $('#tcard-area').classList.add('hide');
   $('#coment').text("");
   $('#coment2').text("");
 }
