@@ -33,7 +33,7 @@ var logout = $('logout').get(0);
 
 
 //ログイン処理
-$('#login').('click', function() {
+$('#login').on('click', function() {
   var email = $('#email').value;
   var password = $('#password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
