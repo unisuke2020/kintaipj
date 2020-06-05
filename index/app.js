@@ -20,15 +20,15 @@ var logout = $('logout').get(0);
 
 
 //新規登録処理
-newuser.addEventListener('click', function() {
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+//newuser.addEventListener('click', function() {
+//  var email = document.getElementById('email').value;
+//  var password = document.getElementById('password').value;
   
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-  .catch(function(error) {
-    alert('登録できません（' + error.message + '）');
-  });
-});
+//  firebase.auth().createUserWithEmailAndPassword(email, password)
+//  .catch(function(error) {
+//    alert('登録できません（' + error.message + '）');
+//  });
+//});
 
 
 
